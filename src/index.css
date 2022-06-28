@@ -1,14 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Noto Sans JP", sans-serif;
+  /* font-family: "Noto Sans JP", sans-serif;
+   */
+  font-family: "Patrick Hand", cursive;
 }
 
 body {
   margin: 0;
   background-color: #3f3f3f;
 }
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  background-clip: padding-box;
+  padding: 1px !important;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 46, 82, 1);
+  /* border-radius: 10px; */
+  background-clip: padding-box;
+  padding: 1px !important;
+}
+/*SCROLLBAR END*/
