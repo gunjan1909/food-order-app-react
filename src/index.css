@@ -32,7 +32,7 @@ body {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(23, 46, 82, 1);
+  background: rgb(211, 218, 228);
   /* border-radius: 10px; */
   background-clip: padding-box;
   padding: 1px !important;

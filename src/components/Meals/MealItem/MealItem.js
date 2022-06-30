@@ -3,6 +3,7 @@
 import React from "react";
 
 import MealItemForm from "./MealItemForm";
+//import Card from "../../UI/Card";
 import classes from "./MealItem.module.css";
 const MealItem = (props) => {
   const price = `$ ${props.price.toFixed(2)}`;
@@ -14,7 +15,9 @@ const MealItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       {/* form goes here where user add meal to cart  */}
-      <div></div>
+      <div>
+        <MealItemForm />
+      </div>
     </li>
   );
 };

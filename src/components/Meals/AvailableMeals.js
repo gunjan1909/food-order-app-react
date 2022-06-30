@@ -34,6 +34,7 @@ const AvailableMeals = () => {
   //mealsList will loop through dummyMeals and create a MealItem array for each meal
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealItem
+      id={meal.id}
       key={meal.id}
       name={meal.name}
       description={meal.description}
