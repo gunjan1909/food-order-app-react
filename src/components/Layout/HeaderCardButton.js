@@ -1,3 +1,4 @@
+//your cart button in the header /navbar along with the cart icon svg
 import React from "react";
 
 import CartIcon from "../Cart/CartIcon";

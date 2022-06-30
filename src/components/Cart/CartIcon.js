@@ -1,3 +1,5 @@
+//just a component returning the icon svg for cart 🛒
+
 import React from "react";
 
 const CartIcon = () => {

@@ -1,3 +1,5 @@
+//basically displaying the menu, has to be dynamic fr, but rn dummy meal array
+
 import React from "react";
 
 import Card from "../UI/Card";
@@ -31,7 +33,7 @@ const DUMMY_MEALS = [
   },
 ];
 const AvailableMeals = () => {
-  //mealsList will loop through dummyMeals and create a MealItem array for each meal
+  //mealsList will loop through dummyMeals and create a mealList array of meal items for each meal
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealItem
       id={meal.id}
