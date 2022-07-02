@@ -1,3 +1,5 @@
+//simple input resuable component with props, label and input
+
 import React from "react";
 
 import classes from "./Input.module.css";
