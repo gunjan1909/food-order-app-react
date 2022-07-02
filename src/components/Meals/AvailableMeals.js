@@ -48,6 +48,7 @@ const AvailableMeals = () => {
   return (
     <section className={classes.meals}>
       <Card>
+        {/* meallist is an array of jsx element MealItem */}
         <ul>{mealsList}</ul>
       </Card>
     </section>

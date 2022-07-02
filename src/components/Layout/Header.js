@@ -1,7 +1,7 @@
 //header component, display the header, cart button and main image .
 import React from "react";
 
-import HeaderCartButton from "./HeaderCardButton";
+import HeaderCartButton from "./HeaderCartButton";
 import mealImage from "../../assets/meals2.jpg";
 import classes from "./Header.module.css";
 
