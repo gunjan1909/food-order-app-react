@@ -16,7 +16,7 @@ const MealItem = (props) => {
       </div>
       {/* form goes here where user add meal to cart  */}
       <div>
-        <MealItemForm />
+        <MealItemForm id={props.id} />
       </div>
     </li>
   );
