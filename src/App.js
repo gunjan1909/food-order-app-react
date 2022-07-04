@@ -1,3 +1,5 @@
+//main app component
+
 import React, { useState } from "react";
 
 import Header from "./components/Layout/Header";
@@ -17,8 +19,9 @@ function App() {
     setCartIsShown(false);
   };
   return (
+    //all wrapped in cartProvider context
     <CartProvider>
-      {/* the cart component, prop passed to close the cart on clicking the backdrop or close button */}
+      {/* the cart component, prop passed to close the cart and bakcdrop modal on clicking the backdrop or close button */}
       {cartIsShown && <Cart onClose={hideCartHandler} />}
 
       {/* header component, props passed to show cart and modal on clicking cart button */}

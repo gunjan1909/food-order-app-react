@@ -7,16 +7,19 @@ import classes from "./Cart.module.css";
 const Cart = (props) => {
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {[
-        {
-          id: "c1",
-          name: "Cheese Burger",
-          amount: 2,
-          price: 10.99,
-        },
-      ].map((item) => (
-        <li>{item.name}</li>
-      ))}
+      {
+        //this array needs to be dynamic ie user entered items in cart
+        [
+          {
+            id: "c1",
+            name: "Cheese Burger",
+            amount: 2,
+            price: 10.99,
+          },
+        ].map((item) => (
+          <li>{item.name}</li>
+        ))
+      }
     </ul>
   );
   return (
