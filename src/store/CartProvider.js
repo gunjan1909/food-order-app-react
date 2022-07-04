@@ -4,19 +4,49 @@ import React, { useReducer } from "react";
 
 import CartContext from "./cart-context";
 
+//simple default cart state
 const defaultCartState = {
   items: [],
   totalAmount: 0,
 };
 
 //reducer function
-//state is last state snapshot, action is dispatched by u
+//state is last state snapshot, action is dispatched by us
 const cartReducer = (state, action) => {
+  //if we add to cart
   if (action.type === "ADD") {
-    const updatedItems = state.items.concat(action.item);
+    //old state amount + action(new item)amount*no.of items
     const updatedTotalAmount =
-      //old state amount + action(new item)amount*no.of items
       state.totalAmount + action.item.price * action.item.amount;
+
+    //finding the index if the added item already exist
+    const existingCartItemIndex = state.items.findIndex(
+      (item) => item.id === action.item.id
+    );
+
+    //if the item already exist, the existing item
+    const existingCartItem = state.items[existingCartItemIndex];
+
+    let updatedItems;
+
+    //if the item already exist, update the amount
+    if (existingCartItem) {
+      //updateing the amount of already existing item
+      const updatedItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount + action.item.amount,
+      };
+      //updating the items array
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    }
+    //else just add the item to the items array
+    else {
+      //concat() instead of push() to return new array instead of changing the existing array in memory
+      updatedItems = state.items.concat(action.item);
+    }
+
+    //return the new cart items and total amount
     return {
       items: updatedItems,
       totalAmount: updatedTotalAmount,
@@ -52,6 +82,7 @@ const CartProvider = (props) => {
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
+
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
