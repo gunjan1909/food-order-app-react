@@ -56,7 +56,7 @@ const cartReducer = (state, action) => {
     //finding the index if the added item already exist
     //finding the index if the added item already exist
     const existingCartItemIndex = state.items.findIndex(
-      (item) => item.id === action.item.id
+      (item) => item.id === action.id
     );
     //if the item already exist, the existing item
     const existingItem = state.items[existingCartItemIndex];
@@ -66,7 +66,7 @@ const cartReducer = (state, action) => {
     let updatedItems;
     if (existingItem.amount === 1) {
       //getting a new array using filter with that one item removed
-      updatedItems = state.items.filter((item) => item.id !== action.item.id);
+      updatedItems = state.items.filter((item) => item.id !== action.id);
     } else {
       //updateing the amount of already existing item
       const updatedItem = {
