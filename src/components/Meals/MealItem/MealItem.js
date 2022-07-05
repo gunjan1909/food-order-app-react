@@ -19,6 +19,7 @@ const MealItem = (props) => {
     cartCtx.addItem({
       id: props.id,
       name: props.name,
+      //amount here is coming from user entered in MealItemForm.js
       amount: amount,
       price: props.price,
     });

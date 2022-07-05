@@ -21,6 +21,7 @@ function App() {
   return (
     //all wrapped in cartProvider context
     <CartProvider>
+      {/* this cart component is only shown in the modal when clicked on cart button */}
       {/* the cart component, prop passed to close the cart and bakcdrop modal on clicking the backdrop or close button */}
       {cartIsShown && <Cart onClose={hideCartHandler} />}
 

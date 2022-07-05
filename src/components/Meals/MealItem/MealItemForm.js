@@ -16,6 +16,8 @@ const MealItemForm = (props) => {
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNumber = +enteredAmount; //converting to number
     //validity of amount
+
+    //if entered amount of items is invalid
     if (
       enteredAmount.trim().length === 0 ||
       enteredAmountNumber < 1 ||
@@ -24,6 +26,7 @@ const MealItemForm = (props) => {
       setAmountIsValid(false);
       return;
     }
+    //we not using context here as we dont have other details, so we pass it in parent MealItem.js and pass it to context there with other details like name, id ,price along with this entered amount
     props.onAddToCart(enteredAmountNumber);
   };
 

@@ -10,12 +10,20 @@ const Cart = (props) => {
   //cart context
   const cartCtx = useContext(CartContext);
 
+  //total amount/price of items in the cart
   const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+
+  //check if cart has items or not and used to display order button conditionally
   const hasItems = cartCtx.items.length > 0;
 
-  const cartItemRemoveHandler = (id) => {};
-
-  const cartItemAddHandler = (item) => {};
+  //remove item from the cart on - button in cart
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+  //add more item to the cart on + button in cart
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
