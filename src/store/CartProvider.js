@@ -54,6 +54,7 @@ const cartReducer = (state, action) => {
   }
   if (action.type === "REMOVE") {
     //finding the index if the added item already exist
+    //finding the index if the added item already exist
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
