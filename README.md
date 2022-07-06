@@ -1,4 +1,4 @@
-### Food Order React app to revise/learn all basic react concepts like useState, useEffect, useReducer, refs,fragments, portals, context, and other inbuilt hooks
+### Food Order React app to revisit all basic react concepts like useState, useEffect, useReducer, refs,fragments, portals, context, and other inbuilt basic hooks
 
 # Getting Started with Create React App
 
