@@ -2,6 +2,7 @@ import React from "react";
 
 import classes from "./CartItem.module.css";
 
+//props here is containing all data about a particular item in cart like name,price, amount, name, etc
 const CartItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
 
@@ -15,7 +16,9 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
+        {/* remove button */}
         <button onClick={props.onRemove}>−</button>
+        {/* add button */}
         <button onClick={props.onAdd}>+</button>
       </div>
     </li>

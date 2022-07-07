@@ -3,6 +3,7 @@
 import React from "react";
 import classes from "./MealsSummary.module.css";
 
+//return the mealsummary component
 const MealsSummary = () => {
   return (
     <section className={classes.summary}>

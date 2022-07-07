@@ -12,6 +12,8 @@ const defaultCartState = {
 
 //reducer function
 //state is last state snapshot, action is dispatched by us
+//IMP LOGIC OF THE APP RESIDES HERE ( ie adding and remoing items to the cart)
+//state is the previous state snapshot and action is the dispatched action thru the dispatch cart action function
 const cartReducer = (state, action) => {
   //if we add to cart
   if (action.type === "ADD") {
@@ -88,6 +90,7 @@ const cartReducer = (state, action) => {
 
 //component function
 const CartProvider = (props) => {
+  //declaring the usereducer for cart state
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     defaultCartState

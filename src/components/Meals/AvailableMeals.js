@@ -3,9 +3,10 @@
 import React from "react";
 
 import Card from "../UI/Card";
-import MealItem from "./MealItem/MealItem";
+import MealItem from "./MealItem/MealItem"; //importing the MealItem component
 import classes from "./AvailableMeals.module.css";
 
+//dummy array of all meals available
 const DUMMY_MEALS = [
   {
     id: "m1",

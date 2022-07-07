@@ -1,8 +1,8 @@
 //your cart button in the header /navbar along with the cart icon svg
 import React, { useContext, useState, useEffect } from "react";
 
-import CartIcon from "../Cart/CartIcon";
-import CartContext from "../../store/cart-context";
+import CartIcon from "../Cart/CartIcon"; // cart icon svg component
+import CartContext from "../../store/cart-context"; // cart context to get access to the cart state
 import classes from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
@@ -13,6 +13,9 @@ const HeaderCartButton = (props) => {
 
   const { items } = cartCtx;
 
+  //console.log(items);
+
+  //getting the total number of items in the cart thru cart context
   const numberOfCartItems = items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
@@ -25,7 +28,7 @@ const HeaderCartButton = (props) => {
     btnIsHighlighted ? classes.bump : ""
   }`;
 
-  //adding the highlighting effect class, but also remove after 300ms(after the effect end) and add it again when item change in cart as effect will run only once then if not removed
+  //adding the highlighting effect class(not when items are 0), but also remove after 300ms(after the effect end) and add it again when item change in cart as effect will run only once then if not removed
   useEffect(() => {
     if (items.length === 0) {
       return;
@@ -45,6 +48,7 @@ const HeaderCartButton = (props) => {
   return (
     <button className={btnClasses} onClick={props.onClick}>
       <span className={classes.icon}>
+        {/* CartIcon component */}
         <CartIcon />
       </span>
       <span>Your Cart</span>

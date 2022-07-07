@@ -1,8 +1,8 @@
 //header component, display the header, cart button and main image .
 import React from "react";
 
-import HeaderCartButton from "./HeaderCartButton";
-import mealImage from "../../assets/meals2.jpg";
+import HeaderCartButton from "./HeaderCartButton"; //The cartButton in header
+import MainImage from "./MainImage";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
@@ -13,10 +13,7 @@ const Header = (props) => {
         {/* cart button */}
         <HeaderCartButton onClick={props.onShowCart} />
       </header>
-      {/* main image */}
-      <div className={classes["main-image"]}>
-        <img src={mealImage} alt="meal.jpg" />
-      </div>
+      <MainImage />
     </>
   );
 };

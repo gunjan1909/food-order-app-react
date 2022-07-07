@@ -30,6 +30,7 @@ const MealItemForm = (props) => {
     props.onAddToCart(enteredAmountNumber);
   };
 
+  //on submit form, it calls submitHandler which checks for validity of input and then if true it returns the enteredAmount to the parent MealItem compnent
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
@@ -45,6 +46,7 @@ const MealItemForm = (props) => {
         }}
       />
       <button>+ Add</button>
+      {/* technically it isnt useful as input itseld wont take invalid input */}
       {!amountIsValid && <p>Please enter a valid amount(1-5)</p>}
     </form>
   );

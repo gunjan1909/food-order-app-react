@@ -2,14 +2,17 @@
 
 import React, { useState } from "react";
 
-import Header from "./components/Layout/Header";
-import Meals from "./components/Meals/Meals";
-import Cart from "./components/Cart/Cart";
-import CartProvider from "./store/CartProvider";
+import Header from "./components/Layout/Header"; //header component
+import Meals from "./components/Meals/Meals"; //display meal component( available meal + meal summary)
+import Cart from "./components/Cart/Cart"; //Cart inside the modal, but that when cartIsShown is true
+import CartProvider from "./store/CartProvider"; // CartProvider to get access to the cart state context
 
 function App() {
   //managing the cart visibility state
   const [cartIsShown, setCartIsShown] = useState(false);
+
+  //FOR MODAL TO DISPLAY WITH THE CART
+
   //show the cart
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -18,6 +21,9 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
+
+  //RETURN THE COMPONENT WRAPPED IN CARTPROVIDER CONTEXT
+
   return (
     //all wrapped in cartProvider context
     <CartProvider>
