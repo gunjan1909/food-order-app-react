@@ -10,9 +10,10 @@ const defaultCartState = {
   totalAmount: 0,
 };
 
-//reducer function
-//state is last state snapshot, action is dispatched by us
 //IMP LOGIC OF THE APP RESIDES HERE ( ie adding and remoing items to the cart)
+
+//reducer function
+
 //state is the previous state snapshot and action is the dispatched action thru the dispatch cart action function
 const cartReducer = (state, action) => {
   //if we add to cart
